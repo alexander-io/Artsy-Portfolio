@@ -1,5 +1,8 @@
 let express = require('express')
 let app = express()
+let server = require('http').Server(app)
+let io = require('socket.io')(server)
+
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html')
@@ -25,8 +28,9 @@ app.get('/fonts/roboto/Roboto-Regular.woff2', function(req, res) {
   res.sendFile(__dirname + '/node_modules/materialize-css/dist/fonts/roboto/Roboto-Regular.woff2')
 })
 
-// node_modules/materialize-css/dist/fonts/roboto/Roboto-Medium.woff
-// node_modules/materialize-css/dist/fonts/roboto/Roboto-Medium.woff2
+app.get('/WhiteVase2.jpg', function(req, res) {
+  res.sendFile(__dirname + '/art_works_img/WhiteVase2.jpg')
+})
 
 app.listen(8080, function() {
   console.log('listening on 8080');

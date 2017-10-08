@@ -11,11 +11,62 @@
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col s4"></div>
-          <div class="col s4"></div>
-          <div class="col s4"></div>
+          <div id="column-mount-00" class="col s4"></div>
+          <div id="column-mount-01" class="col s4"></div>
+          <div id="column-mount-02" class="col s4"></div>
         </div>
       </div>
     </div>
+
+    <script type="text/javascript">
+      // need to receive the list of images from the server through the socket
+      let lst_of_images = []
+
+
+      // select the mounting elements
+      let
+        column_mount_00 = document.getElementById('column-mount-00'),
+        column_mount_01 = document.getElementById('column-mount-01'),
+        column_mount_02 = document.getElementById('column-mount-02')
+
+      let column_flag = 0
+
+      for (let x = 0; x < 1024; x++) {
+        let col_mod = column_flag%3
+
+        let piece_wrapper = document.createElement('div'),
+        piece_box = document.createElement('div'),
+        piece_thumbnail = document.createElement('img')
+
+
+        piece_wrapper.style.position = 'relative'
+        piece_wrapper.style.width = '100%'
+        piece_wrapper.style.margin = '5%'
+
+        piece_thumbnail.src = 'WhiteVase2.jpg'
+        piece_thumbnail.style.width = '100%'
+
+        piece_box.appendChild(piece_thumbnail)
+        piece_wrapper.appendChild(piece_box)
+
+        switch (col_mod) {
+          case 0:
+          column_mount_00.appendChild(piece_wrapper)
+
+          break;
+          case 1:
+          column_mount_01.appendChild(piece_wrapper)
+          break;
+          case 2:
+
+          column_mount_02.appendChild(piece_wrapper)
+          break;
+          default:
+          column_mount_00.appendChild(piece_wrapper)
+
+        }
+        column_flag++
+      }
+    </script>
   </body>
 </html>

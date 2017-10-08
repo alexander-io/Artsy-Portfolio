@@ -20,6 +20,7 @@
   "homepage": "https://github.com/alexander-io/Artsy-Portfolio#readme",
   "dependencies": {
     "express": "^4.16.1",
-    "materialize-css": "^0.100.2"
+    "materialize-css": "^0.100.2",
+    "socket.io": "^2.0.3"
   }
 }

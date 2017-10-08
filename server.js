@@ -6,7 +6,26 @@ let fs = require('fs')
 
 server.listen(8080)
 
+let lst_of_images_file_titles = []
 let art_image_directory_path = __dirname + '/art_works_img/'
+fs.readdir(art_image_directory_path, (err, files) => {
+    files.forEach(file => {
+      lst_of_images_file_titles.push(file)
+      console.log(file)
+    })
+})
+
+setTimeout(function(){
+  console.log(lst_of_images_file_titles);
+
+  for (let x = 0; x < lst_of_images_file_titles.length; x++) {
+    app.get('/' + lst_of_images_file_titles[x], function(req, res) {
+      res.sendFile(__dirname + '/art_works_img/' + lst_of_images_file_titles[x])
+    })
+  }
+
+
+}, 500)
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html')
@@ -41,7 +60,7 @@ app.get('/socket.io.js', function(req, res) {
 })
 
 io.on('connection', function(socket) {
-  socket.emit('event', {hello : 'world'})
+  socket.emit('event', lst_of_images_file_titles)
   // socket.io('')
   socket.on('other event', function(data) {
     console.log(data)

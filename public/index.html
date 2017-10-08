@@ -21,14 +21,20 @@
     </div>
 
     <script type="text/javascript">
+      // need to receive the list of images from the server through the socket
+      var lst_of_images = []
 
       let socket = io.connect('http://localhost:8080')
       socket.on('event', function(data) {
-        console.log(data)
+        // console.log(data)
+        for (let x = 0; x < data.length; x++) {
+          lst_of_images.push(data[x])
+        }
       })
 
-      // need to receive the list of images from the server through the socket
-      let lst_of_images = []
+      setTimeout(function(){
+        console.log(lst_of_images);
+
 
 
       // select the mounting elements
@@ -39,7 +45,7 @@
 
       let column_flag = 0
 
-      for (let x = 0; x < 1024; x++) {
+      for (let x = 0; x < lst_of_images.length; x++) {
         let col_mod = column_flag%3
 
         let piece_wrapper = document.createElement('div'),
@@ -51,7 +57,9 @@
         piece_wrapper.style.width = '100%'
         piece_wrapper.style.margin = '5%'
 
-        piece_thumbnail.src = 'WhiteVase2.jpg'
+        // piece_thumbnail.src = 'WhiteVase2.jpg'
+        piece_thumbnail.src = lst_of_images[x]
+        // lst_of_images
         piece_thumbnail.style.width = '100%'
 
         piece_box.appendChild(piece_thumbnail)
@@ -75,6 +83,7 @@
         }
         column_flag++
       }
+    }, 500)
     </script>
   </body>
 </html>

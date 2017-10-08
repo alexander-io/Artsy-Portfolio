@@ -2,8 +2,11 @@ let express = require('express')
 let app = express()
 let server = require('http').Server(app)
 let io = require('socket.io')(server)
+let fs = require('fs')
 
 server.listen(8080)
+
+let art_image_directory_path = __dirname + '/art_works_img/'
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html')
@@ -33,14 +36,14 @@ app.get('/WhiteVase2.jpg', function(req, res) {
   res.sendFile(__dirname + '/art_works_img/WhiteVase2.jpg')
 })
 
+app.get('/socket.io.js', function(req, res) {
+  res.sendFile(__dirname + '/node_modules/socket.io/')
+})
+
 io.on('connection', function(socket) {
-  socket.emit('event', {hello : world})
+  socket.emit('event', {hello : 'world'})
   // socket.io('')
   socket.on('other event', function(data) {
     console.log(data)
   })
 })
-
-// app.listen(8080, function() {
-//   console.log('listening on 8080');
-// })

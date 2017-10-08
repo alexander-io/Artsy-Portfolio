@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>KLee Pottery</title>
     <meta charset="utf-8">
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="materialize.js"></script>
     <link rel="stylesheet" href="materialize.css">
-    <title></title>
+    <!-- request socket io script -->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <div class="section">
@@ -19,6 +21,12 @@
     </div>
 
     <script type="text/javascript">
+
+      let socket = io.connect('http://localhost:8080')
+      socket.on('event', function(data) {
+        console.log(data)
+      })
+
       // need to receive the list of images from the server through the socket
       let lst_of_images = []
 

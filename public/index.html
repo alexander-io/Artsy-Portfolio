@@ -8,17 +8,39 @@
     <link rel="stylesheet" href="materialize.css">
     <!-- request socket io script -->
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
   <body>
-    <div class="section">
-      <div class="container">
-        <div class="row">
+    <style media="screen">
+      body {
+        font-family: 'Poiret One', cursive;
+      }
+    </style>
+    <nav style="background-color:white;z-index:5;position:fixed;">
+
+    </nav>
+    <!-- <div id="side-nav" class="" style="position:fixed;height:100%;width:25%;background-color:#f1f1f1;margin-top:1%;">
+
+    </div> -->
+    <div class="row">
+      <div class="col s3">
+
+      </div>
+      <div class="col s9" style="margin-top:10%;padding-right:5%;">
+        <div id="column-mount-00" class="col s4"></div>
+        <div id="column-mount-01" class="col s4"></div>
+        <div id="column-mount-02" class="col s4"></div>
+      </div>
+    </div>
+    <!-- <div class="section" style="left:25%;position:relative;width:75%;">
+      <div class="container" >
+        <div class="row" style="margin-top:10%;position:relative;">
           <div id="column-mount-00" class="col s4"></div>
           <div id="column-mount-01" class="col s4"></div>
           <div id="column-mount-02" class="col s4"></div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <script type="text/javascript">
       // need to receive the list of images from the server through the socket
@@ -58,11 +80,20 @@
         piece_wrapper.style.margin = '5%'
 
         // piece_thumbnail.src = 'WhiteVase2.jpg'
+
         piece_thumbnail.src = lst_of_images[x]
         // lst_of_images
         piece_thumbnail.style.width = '100%'
 
+
+        let piece_title = document.createElement('h5');
+        piece_title.style.fontStyle = 'italic'
+        piece_title.style.fontStyle = 'bold'
+        piece_title.innerHTML = lst_of_images[x].substring(0, lst_of_images[x].indexOf('.'))
+
+
         piece_box.appendChild(piece_thumbnail)
+        piece_box.appendChild(piece_title)
         piece_wrapper.appendChild(piece_box)
 
         switch (col_mod) {

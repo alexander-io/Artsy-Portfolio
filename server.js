@@ -3,6 +3,7 @@ let app = express()
 let server = require('http').Server(app)
 let io = require('socket.io')(server)
 
+server.listen(8080)
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html')
@@ -32,6 +33,14 @@ app.get('/WhiteVase2.jpg', function(req, res) {
   res.sendFile(__dirname + '/art_works_img/WhiteVase2.jpg')
 })
 
-app.listen(8080, function() {
-  console.log('listening on 8080');
+io.on('connection', function(socket) {
+  socket.emit('event', {hello : world})
+  // socket.io('')
+  socket.on('other event', function(data) {
+    console.log(data)
+  })
 })
+
+// app.listen(8080, function() {
+//   console.log('listening on 8080');
+// })

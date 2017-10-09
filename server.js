@@ -23,12 +23,14 @@ setTimeout(function(){
       res.sendFile(__dirname + '/art_works_img/' + lst_of_images_file_titles[x])
     })
   }
-
-
 }, 500)
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/public/index.html')
+})
+
+app.get('/plax_carousel.html', function(req, res) {
+  res.sendFile(__dirname + '/public/plax_carousel.html')
 })
 
 app.get('/jquery.js', function(req, res) {
@@ -53,6 +55,10 @@ app.get('/fonts/roboto/Roboto-Regular.woff2', function(req, res) {
 
 app.get('/WhiteVase2.jpg', function(req, res) {
   res.sendFile(__dirname + '/art_works_img/WhiteVase2.jpg')
+})
+
+app.get('/CarvedFlowerVase3.jpg', function(req, res) {
+  res.sendFile(__dirname + '/art_works_img/CarvedFlowerVase3.jpg')
 })
 
 app.get('/socket.io.js', function(req, res) {

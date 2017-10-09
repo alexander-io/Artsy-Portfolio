@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="materialize.js"></script>
+    <link rel="stylesheet" href="materialize.css">
+  </head>
+  <body id="body">
+    <div class="section">
+      <div id="carousel" class="carousel">
+
+      </div>
+      <div id="content" class="">
+
+      </div>
+    </div>
+    <style media="screen">
+      #content {
+        position: relative;
+        background-color: white;
+        /*height: 100%;*/
+        width: 100%;
+      }
+      #carousel {
+        position: fixed;
+        z-index: -1;
+        height:50%;
+        width: 100%;
+        background-color: #f9f9f8;
+        background-image: url('CarvedFlowerVase3.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      body {
+        height:5000px;
+      }
+    </style>
+    <script type="text/javascript">
+      let body = document.getElementById('body');
+      let carousel = document.getElementById('carousel')
+      let content = document.getElementById('content');
+      console.log(carousel);
+
+      let carousel_rect = carousel.getBoundingClientRect()
+      console.log(carousel_rect);
+      content.style.top = carousel_rect.height + 'px'
+      content.style.height = body.getBoundingClientRect().height - carousel_rect.height + 'px'
+
+    </script>
+  </body>
+</html>

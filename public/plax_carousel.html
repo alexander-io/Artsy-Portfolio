@@ -39,6 +39,20 @@
       }
     </style>
     <script type="text/javascript">
+
+
+      class Q {
+        constructor() {
+          this.supporting_array = []
+        }
+        enqueue(x) {
+          this.supporting_array.push(x)
+        }
+        dequeue() {
+          return this.supporting_array.shift()
+        }
+      }
+
       let body = document.getElementById('body');
       let carousel = document.getElementById('carousel')
       let content = document.getElementById('content');
@@ -48,7 +62,7 @@
       console.log(carousel_rect);
       content.style.top = carousel_rect.height + 'px'
       content.style.height = body.getBoundingClientRect().height - carousel_rect.height + 'px'
-
+      
     </script>
   </body>
 </html>

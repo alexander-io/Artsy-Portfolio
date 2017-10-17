@@ -4,6 +4,16 @@ let server = require('http').Server(app)
 let io = require('socket.io')(server)
 let fs = require('fs')
 
+// mongo
+var MongoClient = require('mongodb').MongoClient
+let url = 'mongodb://localhost:27017/klee'
+
+// use connect method to connect to mongo server
+MongoClient.connect(url, function(err, db) {
+  console.log('connected to mongo server successfully');
+  db.close()
+})
+
 server.listen(8080)
 
 let lst_of_images_file_titles = []

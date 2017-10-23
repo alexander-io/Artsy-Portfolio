@@ -75,6 +75,10 @@ app.get('/socket.io.js', function(req, res) {
   res.sendFile(__dirname + '/node_modules/socket.io/')
 })
 
+app.get('/LOGO.jpg', function(req, res) {
+  res.sendFile(__dirname + '/art_works_img/LOGO.jpg')
+})
+
 io.on('connection', function(socket) {
   socket.emit('event', lst_of_images_file_titles)
   // socket.io('')

@@ -10,11 +10,8 @@ MongoClient.connect(url, function(err, db) {
   db.close()
 })
 
-
-
-
 let filenames = fs.readdirSync(__dirname + '/../art_works_img/')
-// console.log(filenames);
+
 let clay_work = require(__dirname + '/claydb.json')
 
 console.log(clay_work);

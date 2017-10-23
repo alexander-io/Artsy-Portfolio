@@ -13,5 +13,38 @@
         "width" : ""
       }
     }
+
+    ,
+
+    {
+      "title" : "",
+      "year" : "",
+      "process" : {
+        "medium" : "",
+        "glaze" : "",
+        "firing" : ""
+      },
+      "dimension" : {
+        "height" : "",
+        "width" : ""
+      }
+    }
+
+    ,
+
+    {
+      "title" : "",
+      "year" : "",
+      "process" : {
+        "medium" : "",
+        "glaze" : "",
+        "firing" : ""
+      },
+      "dimension" : {
+        "height" : "",
+        "width" : ""
+      }
+    }
+
   ]
 }

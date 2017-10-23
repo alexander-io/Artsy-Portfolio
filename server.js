@@ -79,6 +79,14 @@ app.get('/LOGO.jpg', function(req, res) {
   res.sendFile(__dirname + '/art_works_img/LOGO.jpg')
 })
 
+app.get('/Buddha2.jpg', function(req, res) {
+  res.sendFile(__dirname + '/art_works_img/Buddha2.jpg')
+})
+
+app.get('/CobaltMatcha.jpg', function(req, res) {
+  res.sendFile(__dirname + '/art_works_img/CobaltMatcha.jpg')
+})
+
 io.on('connection', function(socket) {
   socket.emit('event', lst_of_images_file_titles)
   // socket.io('')

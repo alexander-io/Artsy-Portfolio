@@ -1,16 +1,16 @@
 {
   "klee_pottery" : [
     {
-      "title" : "",
-      "year" : "",
+      "title" : "Little Rascal",
+      "year" : "2016",
       "process" : {
-        "medium" : "",
-        "glaze" : "",
-        "firing" : ""
+        "medium" : "Porcelain",
+        "glaze" : "Celadon with Crystal",
+        "firing" : "Cone 10 Reduction"
       },
       "dimension" : {
-        "height" : "",
-        "width" : ""
+        "height" : "8",
+        "width" : "6"
       }
     }
 

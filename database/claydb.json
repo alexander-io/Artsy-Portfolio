@@ -2,7 +2,7 @@
   "klee_pottery" : [
     {
       "title" : "Little Rascal",
-      "year" : "2016",
+      "year" : "Fall, 2016",
       "process" : {
         "medium" : "Porcelain",
         "glaze" : "Celadon with Crystal",
@@ -24,17 +24,23 @@
     ,
 
     {
-      "title" : "",
-      "year" : "",
+      "title" : "So Much For Subtlety",
+      "year" : "Spring, 2016",
       "process" : {
-        "medium" : "",
+        "medium" : "Stoneware",
         "glaze" : "",
-        "firing" : ""
+        "firing" : "Cone 6 Oxidation"
       },
       "dimension" : {
-        "height" : "",
-        "width" : ""
-      }
+        "height" : "18",
+        "width" : "6"
+      },
+      "images" : [
+        "RedBishop"
+        "RedBishop2"
+        "RedBishop3"
+        "RedBishop4"
+      ]
     }
 
     ,

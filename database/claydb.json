@@ -11,7 +11,14 @@
       "dimension" : {
         "height" : "8",
         "width" : "6"
-      }
+      },
+      "images" : [
+        "Bauble2",
+        "Bauble3"
+        "Bauble4"
+        "Bauble5"
+        "Bauble7"
+      ]
     }
 
     ,
